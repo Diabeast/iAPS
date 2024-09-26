@@ -16,6 +16,7 @@ class DanaKitSettingsViewModel : ObservableObject {
     @Published var showingTimeSyncConfirmation = false
     @Published var showingDisconnectReminder = false
     @Published var showingBolusSyncingDisabled = false
+    @Published var showingBlindReservoirCannulaRefill = false
     @Published var basalButtonText: String = ""
     @Published var bolusSpeed: BolusSpeed
     @Published var isUsingContinuousMode: Bool = false
@@ -34,6 +35,8 @@ class DanaKitSettingsViewModel : ObservableObject {
     
     @Published var showPumpTimeSyncWarning: Bool = false
     @Published var pumpTime: Date? = nil
+    @Published var pumpTimeSyncedAt: Date? = nil
+    @Published var nightlyPumpTimeSync: Bool = false
     
     @Published var reservoirLevelWarning: Double
     @Published var reservoirLevel: Double?
@@ -105,6 +108,8 @@ class DanaKitSettingsViewModel : ObservableObject {
         self.reservoirLevel = self.pumpManager?.state.reservoirLevel
         self.isSuspended = self.pumpManager?.state.isPumpSuspended ?? false
         self.pumpTime = self.pumpManager?.state.pumpTime
+        self.pumpTimeSyncedAt = self.pumpManager?.state.pumpTimeSyncedAt
+        self.nightlyPumpTimeSync = self.pumpManager?.state.allowAutomaticTimeSync ?? false
         self.isBolusSyncingDisabled = self.pumpManager?.state.isBolusSyncDisabled ?? false
         self.batteryLevel = self.pumpManager?.state.batteryRemaining ?? 0
         self.silentTone = self.pumpManager?.state.useSilentTones ?? false
@@ -166,6 +171,9 @@ class DanaKitSettingsViewModel : ObservableObject {
     }
     
     func getLogs() -> [URL] {
+        if let pumpManager = self.pumpManager {
+            log.info(pumpManager.state.debugDescription)
+        }
         return log.getDebugLogs()
     }
     
@@ -223,6 +231,15 @@ class DanaKitSettingsViewModel : ObservableObject {
                 }
             }
         }
+    }
+    
+    func updateNightlyPumpTimeSync(_ value: Bool) {
+        guard let pumpManager = self.pumpManager else {
+            return
+        }
+        
+        pumpManager.state.allowAutomaticTimeSync = value
+        pumpManager.notifyStateDidChange()
     }
     
     func syncPumpTime() {
@@ -357,7 +374,7 @@ class DanaKitSettingsViewModel : ObservableObject {
     }
     
     private func formatDateToDayHour(_ date: Date) -> String {
-        let day = String(format: "%.0f", -date.timeIntervalSinceNow / .days(1))
+        let day = String(format: "%.0f", floor(-date.timeIntervalSinceNow / .days(1)))
         let hour = String(format: "%.0f", (-date.timeIntervalSinceNow.truncatingRemainder(dividingBy: .days(1))) / .hours(1))
         
         return "\(day)d \(hour)h"
@@ -375,6 +392,8 @@ extension DanaKitSettingsViewModel: StateObserver {
         self.isSuspended = state.isPumpSuspended
         self.isBolusSyncingDisabled = state.isBolusSyncDisabled
         self.pumpTime = state.pumpTime
+        self.pumpTimeSyncedAt = state.pumpTimeSyncedAt
+        self.nightlyPumpTimeSync = state.allowAutomaticTimeSync
         self.batteryLevel = state.batteryRemaining
         self.silentTone = state.useSilentTones
         self.basalProfileNumber = state.basalProfileNumber
