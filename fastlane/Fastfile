@@ -156,8 +156,26 @@ platform :ios do
 
     def configure_bundle_id(name, identifier, capabilities)
       bundle_id = Spaceship::ConnectAPI::BundleId.find(identifier) || Spaceship::ConnectAPI::BundleId.create(name: name, identifier: identifier)
+      
+      # Haal bestaande capabilities op
+      existing_capabilities = bundle_id.bundle_id_capabilities
+      existing_capability_types = existing_capabilities.map(&:capability_type)
+      
       capabilities.each { |capability|
-        bundle_id.create_capability(type: capability)
+        unless existing_capability_types.include?(capability)
+          UI.message("Adding capability: #{capability}")
+          begin
+            Spaceship::ConnectAPI::BundleIdCapability.create(
+              bundle_id_id: bundle_id.id,
+              capability_type: capability
+            )
+            UI.success("Successfully added capability: #{capability}")
+          rescue => e
+            UI.error("Failed to add capability #{capability}: #{e.message}")
+          end
+        else
+          UI.message("Capability #{capability} already exists")
+        end
       }
     end
 
