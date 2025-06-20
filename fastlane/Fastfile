@@ -29,6 +29,27 @@ if APP_IDENTIFIER != "ru.artpancreas.#{TEAMID}.FreeAPS"
   File.write('../ConfigOverride.xcconfig', "BUNDLE_IDENTIFIER = #{APP_IDENTIFIER}", mode: 'a')
 end
 
+def configure_bundle_id(name, identifier, capabilities)
+  bundle_id = Spaceship::ConnectAPI::BundleId.find(identifier) || Spaceship::ConnectAPI::BundleId.create(name: name, identifier: identifier)
+  
+  capabilities.each { |capability|
+    UI.message("Adding capability: #{capability} to #{identifier}")
+    begin
+      Spaceship::ConnectAPI::BundleIdCapability.create(
+        bundle_id_id: bundle_id.id,
+        capability_type: capability
+      )
+      UI.success("Successfully added capability: #{capability}")
+    rescue => e
+      if e.message.include?("already exists") || e.message.include?("ENTITY_ALREADY_EXISTS")
+        UI.message("Capability #{capability} already exists")
+      else
+        UI.error("Failed to add capability #{capability}: #{e.message}")
+      end
+    end
+  }
+end
+
 platform :ios do
   desc "Build iAPS"
   lane :build_iAPS do
@@ -153,27 +174,6 @@ platform :ios do
       issuer_id: "#{FASTLANE_ISSUER_ID}",
       key_content: "#{FASTLANE_KEY}"
     )
-
-    def configure_bundle_id(name, identifier, capabilities)
-      bundle_id = Spaceship::ConnectAPI::BundleId.find(identifier) || Spaceship::ConnectAPI::BundleId.create(name: name, identifier: identifier)
-      
-      capabilities.each { |capability|
-        UI.message("Adding capability: #{capability} to #{identifier}")
-        begin
-          Spaceship::ConnectAPI::BundleIdCapability.create(
-            bundle_id_id: bundle_id.id,
-            capability_type: capability
-          )
-          UI.success("Successfully added capability: #{capability}")
-        rescue => e
-          if e.message.include?("already exists") || e.message.include?("ENTITY_ALREADY_EXISTS")
-            UI.message("Capability #{capability} already exists")
-          else
-            UI.error("Failed to add capability #{capability}: #{e.message}")
-          end
-        end
-      }
-    end
 
     configure_bundle_id("FreeAPS", "#{APP_IDENTIFIER}", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS,
