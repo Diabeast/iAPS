@@ -1392,71 +1392,71 @@ Enact a temp Basal or a temp target */
 // --------- AI ---------
 /* */
 
-"Ask AI..." = "Ask AI...";
+"Ask AI..." = "Yêu cầu AI...";
 
-"Search saved foods..." = "Search saved foods...";
+"Search saved foods..." = "Tìm kiếm thực phẩm đã lưu...";
 
-"Search foods..." = "Search foods...";
+"Search foods..." = "Tìm kiếm thực phẩm...";
 
-"Saved Foods" = "Saved Foods";
+"Saved Foods" = "Lưu thực phẩm";
 
-"Add Food Manually" = "Add Food Manually";
+"Add Food Manually" = "Thêm thức ăn thủ công";
 
-"Per Serving" = "Per Serving";
+"Per Serving" = "Mỗi khẩu phần";
 
-"Per 100g" = "Per 100g";
+"Per 100g" = "Trên 100g";
 
-"Per 100ml" = "Per 100ml";
+"Per 100ml" = "Trên 100ml";
 
-"This portion" = "This portion";
+"This portion" = "Khẩu phần này";
 
-"Serving Size" = "Serving Size";
+"Serving Size" = "Khẩu phần ăn";
 
-"Food Name" = "Food Name";
+"Food Name" = "Tên thực phẩm";
 
-"Food" = "Food";
+"Food" = "Thực phẩm";
 
-"Quick access to your frequently used foods" = "Quick access to your frequently used foods";
+"Quick access to your frequently used foods" = "Truy cập nhanh thực phẩm thường dùng";
 
-"Search databases or describe food for AI analysis" = "Search databases or describe food for AI analysis";
+"Search databases or describe food for AI analysis" = "Tìm dữ liệu hoặc mô tả thực phẩm để AI phân tích";
 
-"Scan packaged foods for nutrition information" = "Scan packaged foods for nutrition information";
+"Scan packaged foods for nutrition information" = "Quét sản phẩm để lấy thông tin dinh dưỡng";
 
-"Snap a picture for AI-powered nutrition analysis. Long-press to choose from library." = "Snap a picture for AI-powered nutrition analysis. Long-press to choose from library.";
+"Snap a picture for AI-powered nutrition analysis. Long-press to choose from library." = "Chụp ảnh để AI phân tích dinh dưỡng. Nhấn giữ để chọn từ thư viện.";
 
-"Enter nutrition information manually" = "Enter nutrition information manually";
+"Enter nutrition information manually" = "Nhập thông tin dinh dưỡng thủ công";
 
-"Place a reference object (coin, hand) for scale" = "Place a reference object (coin, hand) for scale";
+"Place a reference object (coin, hand) for scale" = "Đặt một vật tham chiếu (đồng xu, bàn tay) để làm mốc";
 
-"Include the full plate or package in frame" = "Include the full plate or package in frame";
+"Include the full plate or package in frame" = "Đưa toàn bộ đĩa/bao bì vào khung hình";
 
-"Use good lighting for best results" = "Use good lighting for best results";
+"Use good lighting for best results" = "Ánh sáng tốt cho kết quả chính xác hơn";
 
-"Photography Tips" = "Photography Tips";
+"Photography Tips" = "Mẹo chụp ảnh";
 
-"Manual Entry" = "Manual Entry";
+"Manual Entry" = "Nhập thủ công";
 
-"Photo Analysis" = "Photo Analysis";
+"Photo Analysis" = "Phân tích ảnh";
 
-"Barcode Scanner" = "Barcode Scanner";
+"Barcode Scanner" = "Quét mã vạch";
 
-"Text Search" = "Text Search";
+"Text Search" = "Tìm kiếm theo từ";
 
 "AI Image Analysis" = "Phân tích hình ảnh bằng AI";
 
 "Barcode" = "Mã vạch";
 
-"AI Model Statistics" = "AI Model Statistics";
+"AI Model Statistics" = "Thống kê mô hình AI";
 
-"Slide to Clear All Statistics" = "Slide to Clear All Statistics";
+"Slide to Clear All Statistics" = "Vuốt để xóa toàn bộ thống kê";
 
-"Avg Time" = "Avg Time";
+"Avg Time" = "Thời gian trung bình";
 
-"Count" = "Count";
+"Count" = "Đếm";
 
-"Statistics will appear here after you use AI models for food analysis." = "Statistics will appear here after you use AI models for food analysis.";
+"Statistics will appear here after you use AI models for food analysis." = "Thống kê sẽ hiển thị tại đây sau khi bạn sử dụng các mô hình AI để phân tích thực phẩm.";
 
-"No Statistics Yet" = "No Statistics Yet";
+"No Statistics Yet" = "Chưa có thống kê";
 
 "Food Search Settings" = "Cài đặt tìm thực phẩm";
 
@@ -1502,53 +1502,53 @@ Enact a temp Basal or a temp target */
 
 "Important: How to Use Your API Keys" = "Lưu ý: Sử dụng khóa API";
 
-"AI Progress Animation" = "AI Progress Animation";
+"AI Progress Animation" = "Hoạt ảnh tiến trình xử lý AI";
 
-"Miscellaneous" = "Miscellaneous";
+"Miscellaneous" = "Khác";
 
-"AI Usage Statistics" = "AI Usage Statistics";
+"AI Usage Statistics" = "Thống kê sử dụng AI";
 
-"View performance metrics for AI models you've used." = "View performance metrics for AI models you've used.";
+"View performance metrics for AI models you've used." = "Xem các chỉ số hiệu suất của những mô hình AI bạn đã sử dụng.";
 
-"Usage Statistics" = "Usage Statistics";
+"Usage Statistics" = "Thống kê sử dụng";
 
-"Photo library access is required to save images." = "Photo library access is required to save images.";
+"Photo library access is required to save images." = "Cần cấp quyền truy cập thư viện ảnh để lưu hình ảnh.";
 
-"Enable Photo Library Access" = "Enable Photo Library Access";
+"Enable Photo Library Access" = "Bật quyền truy cập thư viện ảnh";
 
-"Save Photos" = "Save Photos";
+"Save Photos" = "Lưu hình ảnh";
 
-"When enabled, photos taken will be saved into the iAPS album in your photo library." = "When enabled, photos taken will be saved into the iAPS album in your photo library.";
+"When enabled, photos taken will be saved into the iAPS album in your photo library." = "Khi bật, các ảnh chụp sẽ được lưu vào album iAPS trong thư viện ảnh của bạn.";
 
-"Photo Library" = "Photo Library";
+"Photo Library" = "Thư viện ảnh";
 
-"Send smaller images to AI" = "Send smaller images to AI";
+"Send smaller images to AI" = "Giảm kích thước ảnh khi gửi cho AI";
 
-"When enabled, images are resized to a smaller resolution before sending to AI. This reduces data usage and speeds up analysis, but the AI will see less detail." = "When enabled, images are resized to a smaller resolution before sending to AI. This reduces data usage and speeds up analysis, but the AI will see less detail.";
+"When enabled, images are resized to a smaller resolution before sending to AI. This reduces data usage and speeds up analysis, but the AI will see less detail." = "Khi bật, hình ảnh sẽ được thu nhỏ độ phân giải trước khi gửi tới AI. Điều này giúp giảm dung lượng dữ liệu và tăng tốc độ phân tích, nhưng AI sẽ thấy ít chi tiết hơn.";
 
-"Image Processing" = "Image Processing";
+"Image Processing" = "Đang xử lý hình ảnh";
 
-"Show annotation prompt for images" = "Show annotation prompt for images";
+"Show annotation prompt for images" = "Hiển thị lời nhắc chú thích ảnh";
 
-"When enabled, you'll be prompted to add optional text descriptions to food images." = "When enabled, you'll be prompted to add optional text descriptions to food images.";
+"When enabled, you'll be prompted to add optional text descriptions to food images." = "Khi bật, ứng dụng sẽ nhắc bạn thêm mô tả văn bản cho ảnh thực phẩm.";
 
-"Image Annotations" = "Image Annotations";
+"Image Annotations" = "Chú thích hình ảnh";
 
-"Default to AI search" = "Default to AI search";
+"Default to AI search" = "Mặc định tìm kiếm bằng AI";
 
-"Sets which search method is selected by default when you open the food search view. You can always toggle between AI and database search using the button next to the search field." = "Sets which search method is selected by default when you open the food search view. You can always toggle between AI and database search using the button next to the search field.";
+"Sets which search method is selected by default when you open the food search view. You can always toggle between AI and database search using the button next to the search field." = "Chọn phương thức tìm kiếm mặc định khi mở tìm kiếm thực phẩm. Có thể chuyển đổi giữa AI và cơ sở dữ liệu bằng nút cạnh ô tìm kiếm.";
 
-"Default Text Search Method" = "Default Text Search Method";
+"Default Text Search Method" = "Tìm kiếm văn bản mặc định";
 
-"Preferred Region" = "Preferred Region";
+"Preferred Region" = "Khu vực ưu tiên";
 
-"Preferred Language" = "Preferred Language";
+"Preferred Language" = "Ngôn ngữ ưu tiên";
 
-"Nutrition Authority" = "Nutrition Authority";
+"Nutrition Authority" = "Cơ quan dinh dưỡng";
 
-"Choose a specific language and region for AI output." = "Choose a specific language and region for AI output.";
+"Choose a specific language and region for AI output." = "Chọn ngôn ngữ và khu vực cụ thể cho đầu ra của AI.";
 
-"Localization" = "Localization";
+"Localization" = "Ngôn ngữ & khu vực";
 
 "Enter your OpenAI API key" = "Nhập khóa API OpenAI";
 
@@ -1568,105 +1568,105 @@ Enact a temp Basal or a temp target */
 
 "Get a free API key from ai.google.dev. Google Gemini provides excellent food recognition with generous free tier (1500 requests per day)." = "Nhận khóa API miễn phí tại ai.google.dev. Google Gemini cung cấp khả năng nhận diện món ăn rất tốt, với mức miễn phí (1.500 yêu cầu mỗi ngày).";
 
-"Enter your Claude API key" = "Enter your Claude API key";
+"Enter your Claude API key" = "Nhập khóa API Claude của bạn";
 
-"Claude API Key" = "Claude API Key";
+"Claude API Key" = "Khóa API Claude";
 
-"Get a Claude API key from console.anthropic.com. Claude excels at detailed reasoning and food analysis. Pricing starts at $0.25 per million tokens for Haiku model." = "Get a Claude API key from console.anthropic.com. Claude excels at detailed reasoning and food analysis. Pricing starts at $0.25 per million tokens for Haiku model.";
+"Get a Claude API key from console.anthropic.com. Claude excels at detailed reasoning and food analysis. Pricing starts at $0.25 per million tokens for Haiku model." = "Nhận khóa API Claude tại console.anthropic.com. Claude chuyên phân tích thực phẩm. Giá từ 0,25 USD/mỗi triệu token (mô hình Haiku).";
 
-"Anthropic (Claude API) Configuration" = "Anthropic (Claude API) Configuration";
+"Anthropic (Claude API) Configuration" = "Cấu hình Anthropic (Claude API)";
 
-"Provider for Barcode Scanning" = "Provider for Barcode Scanning";
+"Provider for Barcode Scanning" = "Nhà cung cấp quét mã vạch";
 
-"Provider for Text/Voice Search" = "Provider for Text/Voice Search";
+"Provider for Text/Voice Search" = "Nhà cung cấp cho tìm kiếm văn bản/giọng nói";
 
-"Provider for AI Text Analysis" = "Provider for AI Text Analysis";
+"Provider for AI Text Analysis" = "Nhà cung cấp AI phân tích văn bản";
 
 "Fast" = "Nhanh";
 
-"Provider for AI Image Analysis" = "Provider for AI Image Analysis";
+"Provider for AI Image Analysis" = "Nhà cung cấp phân tích hình ảnh AI";
 
-"Configure the API service used for each type of food search. AI Image Analysis controls what happens when you take photos of food. Different providers excel at different search methods." = "Configure the API service used for each type of food search. AI Image Analysis controls what happens when you take photos of food. Different providers excel at different search methods.";
+"Configure the API service used for each type of food search. AI Image Analysis controls what happens when you take photos of food. Different providers excel at different search methods." = "Cấu hình dịch vụ API được sử dụng cho từng loại tìm kiếm thực phẩm. AI Phân tích hình ảnh quyết định kết quả khi bạn chụp ảnh thực phẩm. Các nhà cung cấp khác nhau sẽ mạnh ở các phương thức tìm kiếm khác nhau.";
 
-"Food Search Provider Configuration" = "Food Search Provider Configuration";
+"Food Search Provider Configuration" = "Cấu hình tìm kiếm thực phẩm";
 
-"Barcode Scanner" = "Barcode Scanner";
+"Barcode Scanner" = "Quét mã vạch";
 
-"Photography Tips" = "Photography Tips";
+"Photography Tips" = "Mẹo chụp ảnh";
 
-"Manual Entry" = "Manual Entry";
+"Manual Entry" = "Nhập thủ công";
 
-"Manual Entry" = "Manual Entry";
+"Manual Entry" = "Nhập thủ công";
 
-"Photo Analysis" = "Photo Analysis";
+"Photo Analysis" = "Phân tích ảnh";
 
-"Text Search" = "Text Search";
+"Text Search" = "Tìm kiếm theo từ";
 
-"Place a reference object (coin, hand) for scale" = "Place a reference object (coin, hand) for scale";
+"Place a reference object (coin, hand) for scale" = "Đặt một vật tham chiếu (đồng xu, bàn tay) để làm mốc";
 
-"Include the full plate or package in frame" = "Include the full plate or package in frame";
+"Include the full plate or package in frame" = "Đưa toàn bộ đĩa/bao bì vào khung hình";
 
-"Use good lighting for best results" = "Use good lighting for best results";
+"Use good lighting for best results" = "Ánh sáng tốt cho kết quả chính xác hơn";
 
-"Enter nutrition information manually" = "Enter nutrition information manually";
+"Enter nutrition information manually" = "Nhập thông tin dinh dưỡng thủ công";
 
-"Snap a picture for AI-powered nutrition analysis. Long-press to choose from library." = "Snap a picture for AI-powered nutrition analysis. Long-press to choose from library.";
+"Snap a picture for AI-powered nutrition analysis. Long-press to choose from library." = "Chụp ảnh để AI phân tích dinh dưỡng. Nhấn giữ để chọn từ thư viện.";
 
-"Scan packaged foods for nutrition information" = "Scan packaged foods for nutrition information";
+"Scan packaged foods for nutrition information" = "Quét sản phẩm để lấy thông tin dinh dưỡng";
 
-"Search databases or describe food for AI analysis" = "Search databases or describe food for AI analysis";
+"Search databases or describe food for AI analysis" = "Tìm dữ liệu hoặc mô tả thực phẩm để AI phân tích";
 
-"Quick access to your frequently used foods" = "Quick access to your frequently used foods";
+"Quick access to your frequently used foods" = "Truy cập nhanh thực phẩm thường dùng";
 
-"Food" = "Food";
+"Food" = "Thực phẩm";
 
-"Food Name" = "Food Name";
+"Food Name" = "Tên thực phẩm";
 
-"Serving Size" = "Serving Size";
+"Serving Size" = "Khẩu phần ăn";
 
-"This portion" = "This portion";
+"This portion" = "Khẩu phần này";
 
-"Per 100g" = "Per 100g";
+"Per 100g" = "Trên 100g";
 
-"Per Serving" = "Per Serving";
+"Per Serving" = "Mỗi khẩu phần";
 
-"Add Food Manually" = "Add Food Manually";
+"Add Food Manually" = "Thêm thức ăn thủ công";
 
-"Saved Foods" = "Saved Foods";
+"Saved Foods" = "Lưu thực phẩm";
 
-"United States (USDA / FDA)" = "United States (USDA / FDA)";
+"United States (USDA / FDA)" = "Hoa Kỳ (USDA / FDA)";
 
-"European Union (EFSA / EU labeling)" = "European Union (EFSA / EU labeling)";
+"European Union (EFSA / EU labeling)" = "Liên minh Châu Âu (EFSA / ghi nhãn EU)";
 
-"United Kingdom (CoFID / NHS)" = "United Kingdom (CoFID / NHS)";
+"United Kingdom (CoFID / NHS)" = "Vương quốc Anh (CoFID / NHS)";
 
-"Canada (Health Canada)" = "Canada (Health Canada)";
+"Canada (Health Canada)" = "Canada (Bộ Y tế Canada)";
 
-"Australia & New Zealand (FSANZ)" = "Australia & New Zealand (FSANZ)";
+"Australia & New Zealand (FSANZ)" = "Úc & New Zealand (FSANZ)";
 
-"Japan (MHLW)" = "Japan (MHLW)";
+"Japan (MHLW)" = "Nhật Bản (MHLW)";
 
-"International (WHO / FAO / Codex)" = "International (WHO / FAO / Codex)";
+"International (WHO / FAO / Codex)" = "Quốc tế (WHO / FAO / Codex)";
 
-"United States Department of Agriculture (USDA), FDA Nutrition Facts" = "United States Department of Agriculture (USDA), FDA Nutrition Facts";
+"United States Department of Agriculture (USDA), FDA Nutrition Facts" = "Bộ Nông nghiệp Hoa Kỳ (USDA), Bảng thông tin dinh dưỡng của FDA";
 
-"European Food Safety Authority (EFSA), EU food labeling standards" = "European Food Safety Authority (EFSA), EU food labeling standards";
+"European Food Safety Authority (EFSA), EU food labeling standards" = "Cơ quan An toàn Thực phẩm Châu Âu (EFSA), tiêu chuẩn thực phẩm của EU";
 
-"UK Composition of Foods Integrated Dataset (CoFID), NHS" = "UK Composition of Foods Integrated Dataset (CoFID), NHS";
+"UK Composition of Foods Integrated Dataset (CoFID), NHS" = "CSDL thành phần thực phẩm Vương quốc Anh (CoFID), NHS";
 
-"Health Canada, Canadian Nutrition Facts Table" = "Health Canada, Canadian Nutrition Facts Table";
+"Health Canada, Canadian Nutrition Facts Table" = "Bộ Y tế Canada, Bảng dinh dưỡng Canada";
 
-"Food Standards Australia New Zealand (FSANZ)" = "Food Standards Australia New Zealand (FSANZ)";
+"Food Standards Australia New Zealand (FSANZ)" = "Tiêu chuẩn Thực phẩm Úc–New Zealand (FSANZ)";
 
-"Ministry of Health, Labour and Welfare (MHLW), Japanese Food Labeling Standards" = "Ministry of Health, Labour and Welfare (MHLW), Japanese Food Labeling Standards";
+"Ministry of Health, Labour and Welfare (MHLW), Japanese Food Labeling Standards" = "Bộ Y tế, Lao động và Phúc lợi (MHLW), tiêu chuẩn ghi nhãn thực phẩm Nhật Bản";
 
-"World Health Organization (WHO), FAO, Codex Alimentarius" = "World Health Organization (WHO), FAO, Codex Alimentarius";
+"World Health Organization (WHO), FAO, Codex Alimentarius" = "Tổ chức Y tế Thế giới (WHO), FAO, Codex Alimentarius";
 
-"protein" = "protein";
+"protein" = "chất đạm";
 
 "carbs" = "carbs";
 
-"fat" = "fat";
+"fat" = "chất béo";
 
 "📝 Notes" = "📝 Ghi chú";
 
@@ -2001,13 +2001,13 @@ Enact a temp Basal or a temp target */
 
 "Cal" = "Cal";
 
-" servings" = "servings";
+" servings" = "khẩu phần";
 
-" serving" = "serving";
+" serving" = "phần ăn";
 
-"Reset to " = "Reset to ";
+"Reset to " = "Đặt lại về 0 ";
 
-"Apply" = "Apply";
+"Apply" = "Áp dụng";
 
 "Carbs" = "Carbs";
 
