@@ -8,11 +8,13 @@ on:
     # Triggert de build automatisch op de 1e van elke maand om 00:00 UTC
     - cron: '0 0 1 * *'
 
-env:  
+env:
   UPSTREAM_REPO: Artificial-Pancreas/iAPS
   UPSTREAM_BRANCH: ${{ github.ref_name }}
   TARGET_BRANCH: ${{ github.ref_name }}
   ALIVE_BRANCH: alive
+  # Opt-in to Node.js 24 voor alle actions (verplicht vanaf juni 2026)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   auto_build_check:
@@ -56,6 +58,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
 
       - name: Sync upstream changes
         if: vars.SCHEDULED_SYNC == 'true' && github.repository_owner != 'Artificial-Pancreas'
@@ -67,13 +70,12 @@ jobs:
           target_repo_token: ${{ secrets.GH_PAT }}
           upstream_sync_branch: ${{ env.UPSTREAM_BRANCH }}
           upstream_sync_repo: ${{ env.UPSTREAM_REPO }}
-          # Upstream wint altijd bij conflicten
-          git_pull_args: -X theirs
+          # Upstream overschrijft altijd bij conflicten
+          upstream_pull_args: -X theirs
 
   build:
     name: Build
     needs: [auto_build_check, check_certs, check_latest_from_upstream]
-    # Alleen bouwen als auto-build aan staat of handmatig gestart is
     if: needs.auto_build_check.outputs.AUTO_BUILD_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: macos-latest
     permissions:
