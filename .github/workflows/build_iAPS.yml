@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
+    # Triggert de build automatisch op de 1e van elke maand om 00:00 UTC
     - cron: '0 0 1 * *'
 
 env:
@@ -12,6 +13,8 @@ env:
   UPSTREAM_BRANCH: ${{ github.ref_name }}
   TARGET_BRANCH: ${{ github.ref_name }}
   ALIVE_BRANCH: alive
+  # Opt-in to Node.js 24 voor alle actions (verplicht vanaf juni 2026)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   auto_build_check:
@@ -48,26 +51,16 @@ jobs:
     name: Check upstream
     outputs:
       NEW_COMMITS: ${{ steps.sync.outputs.has_new_commits }}
-
+    
     steps:
-      - name: Checkout target repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-          ref: ${{ env.TARGET_BRANCH }}
-          fetch-depth: 0
-
-      - name: Sync upstream changes
-        if: vars.SCHEDULED_SYNC == 'true' && github.repository_owner != 'Artificial-Pancreas'
-        id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
-        with:
-          target_sync_branch: ${{ env.TARGET_BRANCH }}
-          shallow_since: 6 months ago
-          target_repo_token: ${{ secrets.GH_PAT }}
-          upstream_sync_branch: ${{ env.UPSTREAM_BRANCH }}
-          upstream_sync_repo: ${{ env.UPSTREAM_REPO }}
-          upstream_pull_args: -X theirs
+    - name: Checkout target repo
+      if: |
+        needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
+        (vars.SCHEDULED_BUILD != 'false' || vars.SCHEDULED_SYNC != 'false')
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.GH_PAT }}
+        ref: alive
 
   build:
     name: Build
@@ -87,7 +80,7 @@ jobs:
           fi
 
       - name: Select Xcode version
-        run: "sudo xcode-select --switch /Applications/Xcode_16.2.app/Contents/Developer"
+        run: "sudo xcode-select --switch /Applications/Xcode_26.1.1.app/Contents/Developer"
 
       - name: Checkout Repo for building
         uses: actions/checkout@v4
