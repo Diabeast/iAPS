@@ -5,7 +5,6 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    # Triggert de build automatisch op de 1e van elke maand om 00:00 UTC
     - cron: '0 0 1 * *'
 
 env:
@@ -13,8 +12,6 @@ env:
   UPSTREAM_BRANCH: ${{ github.ref_name }}
   TARGET_BRANCH: ${{ github.ref_name }}
   ALIVE_BRANCH: alive
-  # Opt-in to Node.js 24 voor alle actions (verplicht vanaf juni 2026)
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   auto_build_check:
@@ -51,41 +48,10 @@ jobs:
     name: Check upstream
     outputs:
       NEW_COMMITS: ${{ steps.sync.outputs.has_new_commits }}
-    
-    steps:
-    - name: Checkout target repo
-      if: |
-        needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
-        (vars.SCHEDULED_BUILD != 'false' || vars.SCHEDULED_SYNC != 'false')
-      uses: actions/checkout@v5
-      with:
-        token: ${{ secrets.GH_PAT }}
-        ref: alive
-  
-  # Builds iAPS
-  build:
-    name: Build
-    needs: [check_certs,check_latest_from_upstream]
-    runs-on: macos-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Set special variables
-        run: |
-          if [ ! -z ${{ vars.APP_IDENTIFIER }}  ]; then
-            echo "APP_IDENTIFIER=${{ vars.APP_IDENTIFIER }}" >> $GITHUB_ENV
-          fi
-          if [ ! -z ${{ vars.BUILD_GROUP }}  ]; then
-            echo "BUILD_GROUP=${{ vars.BUILD_GROUP }}" >> $GITHUB_ENV
-          fi
 
-      - name: Select Xcode version
-        run: "sudo xcode-select --switch /Applications/Xcode_26.1.1.app/Contents/Developer"
-      
-      - name: Checkout Repo for syncing
-        if: |
-          vars.SCHEDULED_SYNC == 'true'
-        uses: actions/checkout@v5
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
           ref: ${{ env.TARGET_BRANCH }}
@@ -101,7 +67,6 @@ jobs:
           target_repo_token: ${{ secrets.GH_PAT }}
           upstream_sync_branch: ${{ env.UPSTREAM_BRANCH }}
           upstream_sync_repo: ${{ env.UPSTREAM_REPO }}
-          # Upstream overschrijft altijd bij conflicten
           upstream_pull_args: -X theirs
 
   build:
@@ -122,7 +87,7 @@ jobs:
           fi
 
       - name: Select Xcode version
-        run: "sudo xcode-select --switch /Applications/Xcode_26.1.1.app/Contents/Developer"
+        run: "sudo xcode-select --switch /Applications/Xcode_16.2.app/Contents/Developer"
 
       - name: Checkout Repo for building
         uses: actions/checkout@v4
